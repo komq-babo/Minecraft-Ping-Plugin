@@ -1,10 +1,11 @@
 name: Ping
-version: 1.0.0
+version: 1.1.0
 main: com.koba.ping.PingPlugin
 depend: [Kotlin]
 author: koba
 commands:
   ping:
-    permission: ping.command
-  setping:
-    permission: ping.command
+
+permissions:
+  ping.command:
+    default: op
