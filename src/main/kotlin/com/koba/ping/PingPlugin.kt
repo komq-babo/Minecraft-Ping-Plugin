@@ -46,6 +46,10 @@ class PingPlugin: JavaPlugin(), Listener {
                         if (sender.hasPermission("ping.command")) {
                             if (args.size == 2) {
                                 if (args[1].matches("[+-]?\\d*(\\.\\d+)?".toRegex())) {
+                                    if (args[1].toInt() < 0) {
+                                        sender.sendMessage("§c0보다 작은 수는 입력할 수 없습니다.")
+                                        return false
+                                    }
                                     pingspeed = java.lang.Double.valueOf(args[1])
                                     config["ping"] = pingspeed
                                     saveConfig()
