@@ -1,5 +1,5 @@
 name: Ping
-version: 1.1.1
+version: 1.1.2
 main: com.koba.ping.PingPlugin
 depend: [Kotlin]
 author: koba
