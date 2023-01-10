@@ -40,13 +40,14 @@ class PingPlugin: JavaPlugin(), Listener {
                         } else {
                             sender.sendMessage("§c명령어를 쓸 수 있는 권한이 없습니다.")
                         }
+                        return false
                     }
 
                     if (args[0] == "set") {
                         if (sender.hasPermission("ping.command")) {
                             if (args.size == 2) {
                                 if (args[1].matches("[+-]?\\d*(\\.\\d+)?".toRegex())) {
-                                    if (args[1].toInt() < 0) {
+                                    if (args[1].toDouble() < 0) {
                                         sender.sendMessage("§c0보다 작은 수는 입력할 수 없습니다.")
                                         return false
                                     }
@@ -68,6 +69,7 @@ class PingPlugin: JavaPlugin(), Listener {
                         } else {
                             sender.sendMessage("§c명령어를 쓸 수 있는 권한이 없습니다.")
                         }
+                        return false
                     }
 
                 if (args[0] == "check") {
@@ -78,12 +80,13 @@ class PingPlugin: JavaPlugin(), Listener {
                     if (pingspeed.toInt() <= 100) sender.sendMessage("§l지연시간 : §a$pingspeed§ams")
                     if (pingspeed.toInt() == 200) sender.sendMessage("§l지연시간 : §e$pingspeed§ems")
                     if (pingspeed.toInt() >= 300) sender.sendMessage("§l지연시간 : §c$pingspeed§cms")
+                    return false
                 }
-                return false
-
                 sender.sendMessage("/ping toggle")
                 sender.sendMessage("/ping set [Int]")
                 sender.sendMessage("/ping check")
+
+                return false
             }
 
             sender.sendMessage("/ping toggle")
