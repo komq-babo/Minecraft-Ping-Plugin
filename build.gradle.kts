@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "org.example"
-version = "1.1.2"
+version = "1.2.2"
 
 repositories {
     mavenCentral()
@@ -16,6 +16,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     compileOnly("io.papermc.paper:paper-api:1.19.3-R0.1-SNAPSHOT")
+    implementation("io.github.monun:kommand-api:3.0.0")
 }
 
 tasks.test {
