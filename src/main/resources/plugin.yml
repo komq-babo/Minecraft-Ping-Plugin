@@ -1,11 +1,7 @@
 name: Ping
-version: 1.1.2
-main: com.koba.ping.PingPlugin
-depend: [Kotlin]
-author: koba
-commands:
-  ping:
-
-permissions:
-  ping.command:
-    default: op
+main: io.github.koba.ping.PingPlugin
+api-version: 1.19
+version: 1.2.2
+author: Koba
+libraries:
+  - io.github.monun:kommand-core:3.0.0
