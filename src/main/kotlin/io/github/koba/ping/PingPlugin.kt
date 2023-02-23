@@ -1,8 +1,6 @@
 package io.github.koba.ping
 
-import io.github.monun.kommand.getValue
 import io.github.monun.kommand.kommand
-import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
 
@@ -21,8 +19,8 @@ class PingPlugin : JavaPlugin() {
 
     override fun onEnable() {
         saveConfig()
-        val cfile = File(dataFolder, "config.yml")
-        if (cfile.length() == 0L) {
+        val configFile = File(dataFolder, "config.yml")
+        if (configFile.length() == 0L) {
             config.options().copyDefaults(true)
             saveConfig()
         }
