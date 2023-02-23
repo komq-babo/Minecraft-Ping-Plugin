@@ -1,4 +1,4 @@
-# Minecraft-Ping-Plugin
+# Ping
 
 **독일핑**
 
