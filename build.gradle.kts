@@ -6,17 +6,17 @@ plugins {
 }
 
 group = "org.example"
-version = "1.2.2"
+version = "1.2.4"
 
 repositories {
     mavenCentral()
-    maven { url = uri("https://repo.papermc.io/repository/maven-public/")}
+    maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
     testImplementation(kotlin("test"))
-    compileOnly("io.papermc.paper:paper-api:1.19.3-R0.1-SNAPSHOT")
-    implementation("io.github.monun:kommand-api:3.1.2")
+    compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
+    implementation("io.github.monun:kommand-api:3.1.3")
 }
 
 tasks.test {
