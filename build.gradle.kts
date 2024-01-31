@@ -1,32 +1,28 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    kotlin("jvm") version "1.7.20"
-    application
+    kotlin("jvm") version "1.9.21"
+    id("io.papermc.paperweight.userdev") version "1.5.10"
 }
 
-group = "org.example"
-version = "1.2.5"
+group = "io.github.koba"
+version = "1.2.6"
 
 repositories {
     mavenCentral()
-    maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
-    compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
-    implementation("io.github.monun:kommand-api:3.1.3")
+    implementation(kotlin("stdlib"))
+    implementation(kotlin("reflect"))
+    paperweight.paperDevBundle("1.20.1-R0.1-SNAPSHOT")
+    implementation("io.github.monun:kommand-api:latest.release")
+    //    implementation("io.github.monun:tap-api:latest.release")
+    //    implementation("io.github.monun:invfx-api:latest.release")
+    //    implementation("io.github.monun:heartbeat-coroutines:latest.release")
 }
 
 tasks.test {
     useJUnitPlatform()
 }
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
-}
-
-application {
-    mainClass.set("MainKt")
+kotlin {
+    jvmToolchain(17)
 }
